@@ -88,7 +88,7 @@ describe('auth thunk functions', () => {
     const store = makeStore()
     const result = await store.dispatch(asyncFetchProfile())
 
-    expect(asyncFetchProfile.fulfilled.match(result)).toBe(false)
+    expect(asyncFetchProfile.fulfilled.match(result)).toBe(true)
 
     const state = store.getState()
     expect(state.auth.user).toEqual(fakeUser)
