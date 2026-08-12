@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", Consolas, "Courier New", monospace;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    background-color: var(--color-emerald-500);
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-slate-950);
+    transition: background-color 150ms, opacity 150ms;
+  }
+  .btn-primary:hover {
+    background-color: var(--color-emerald-400);
+  }
+  .btn-primary:disabled,
+  .btn-primary[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-slate-700);
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-slate-100);
+    transition: background-color 150ms, opacity 150ms;
+  }
+  .btn-secondary:hover {
+    background-color: var(--color-slate-800);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    color: var(--color-slate-300);
+    transition: background-color 150ms, color 150ms;
+  }
+  .btn-ghost:hover {
+    background-color: var(--color-slate-800);
+    color: var(--color-slate-100);
+  }
+
+  .input {
+    width: 100%;
+    border-radius: 0.5rem;
+    background-color: var(--color-slate-900);
+    border: 1px solid var(--color-slate-700);
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    color: var(--color-slate-100);
+    transition: border-color 150ms, box-shadow 150ms;
+  }
+  .input::placeholder {
+    color: var(--color-slate-500);
+  }
+  .input:focus {
+    border-color: var(--color-emerald-400);
+    outline: none;
+  }
+
+  .badge-accent {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 9999px;
+    background-color: color-mix(in oklab, var(--color-emerald-500) 10%, transparent);
+    border: 1px solid color-mix(in oklab, var(--color-emerald-500) 20%, transparent);
+    padding: 0.125rem 0.625rem;
+    font-size: 0.75rem;
+    color: var(--color-emerald-300);
+  }
+
+  .card {
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-slate-700);
+    background-color: var(--color-slate-900);
+    padding: 1.25rem;
+  }
+}
