@@ -79,7 +79,7 @@ describe('threadsSlice reducer', () => {
     }
     const state = reducer(initialState, action)
 
-    expect(state.status).toBe('faile')
+    expect(state.status).toBe('failed')
     expect(state.error).toBe('Gagal memuat thread')
   })
 
