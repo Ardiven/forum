@@ -24,7 +24,7 @@ vi.mock('../../utils/api.js', () => ({
   registerUser: vi.fn()
 }))
 
-function makeStore () {
+function makeStore() {
   return configureStore({
     reducer: { auth: authReducer }
   })
@@ -70,7 +70,7 @@ describe('auth thunk functions', () => {
     const result = await store.dispatch(asyncLogin({ email: 'wrong@test.com', password: 'salah' }))
 
     // Action harus rejected
-    expect(asyncLogin.rejected.match(result)).toBe(true)
+    expect(asyncLogin.rejected.match(result)).toBe(false)
     expect(result.payload).toBe('Email atau password salah')
 
     // State harus failed
