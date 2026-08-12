@@ -14,16 +14,15 @@ import threadsReducer, {
   asyncFetchThreads,
   asyncCreateThread
 } from '../../states/threads/slice.js'
+import * as api from '../../utils/api.js'
 
-// Mock seluruh modul api.js
+// Mock seluruh modul api.js — vi.mock() di-hoist otomatis oleh Vitest
 vi.mock('../../utils/api.js', () => ({
   getThreads: vi.fn(),
   getUsers: vi.fn(),
   createThread: vi.fn(),
   putAccessToken: vi.fn()
 }))
-
-import * as api from '../../utils/api.js'
 
 function makeStore () {
   return configureStore({

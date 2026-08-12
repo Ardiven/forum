@@ -9,9 +9,8 @@
  */
 
 import { describe, it, expect } from 'vitest'
-import reducer, { clearDetail } from '../../states/threadDetail/slice.js'
-import {
-  asyncFetchThreadDetail,
+import reducer, {
+  clearDetail,
   asyncVoteThread,
   asyncAddComment
 } from '../../states/threadDetail/slice.js'

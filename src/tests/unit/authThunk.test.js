@@ -12,19 +12,17 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { configureStore } from '@reduxjs/toolkit'
 import authReducer, {
   asyncLogin,
-  asyncFetchProfile,
-  asyncLogout
+  asyncFetchProfile
 } from '../../states/auth/slice.js'
+import * as api from '../../utils/api.js'
 
-// Mock seluruh modul api.js
+// Mock seluruh modul api.js — vi.mock() di-hoist otomatis oleh Vitest
 vi.mock('../../utils/api.js', () => ({
   login: vi.fn(),
   getMyProfile: vi.fn(),
   putAccessToken: vi.fn(),
   registerUser: vi.fn()
 }))
-
-import * as api from '../../utils/api.js'
 
 function makeStore () {
   return configureStore({

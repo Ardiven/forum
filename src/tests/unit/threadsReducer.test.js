@@ -9,8 +9,7 @@
  */
 
 import { describe, it, expect } from 'vitest'
-import reducer from '../../states/threads/slice.js'
-import {
+import reducer, {
   asyncFetchThreads,
   asyncCreateThread
 } from '../../states/threads/slice.js'
