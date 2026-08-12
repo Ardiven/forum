@@ -24,7 +24,7 @@ vi.mock('../../utils/api.js', () => ({
   registerUser: vi.fn()
 }))
 
-function makeStore () {
+function makeStore() {
   return configureStore({
     reducer: { auth: authReducer }
   })
