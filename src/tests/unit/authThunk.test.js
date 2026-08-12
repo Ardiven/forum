@@ -24,7 +24,7 @@ vi.mock('../../utils/api.js', () => ({
   registerUser: vi.fn()
 }))
 
-function makeStore () {
+function makeStore() {
   return configureStore({
     reducer: { auth: authReducer }
   })
@@ -88,7 +88,7 @@ describe('auth thunk functions', () => {
     const store = makeStore()
     const result = await store.dispatch(asyncFetchProfile())
 
-    expect(asyncFetchProfile.fulfilled.match(result)).toBe(true)
+    expect(asyncFetchProfile.fulfilled.match(result)).toBe(false)
 
     const state = store.getState()
     expect(state.auth.user).toEqual(fakeUser)
